@@ -1,0 +1,176 @@
+body,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: Arial;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 28px;
+}
+
+header a {
+  float: left;
+  height: auto;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+header .logo {
+  height: 20px;
+}
+
+header .icon {
+  display: none;
+}
+
+.menu a {
+  padding: 14px;
+}
+
+.menu a:hover {
+  background: #ff4d2d;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+  }
+  .nav a:not(:first-child),
+  .menu {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive .icon {
+    position: absolute;
+    right: 28px;
+    top: 29px;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .nav.responsive .menu {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .nav.responsive .menu a {
+    text-align: right;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flex div {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 200px;
+  flex: 1 1 200px;
+  /* flex-grow: how much the item will grow relative to the rest of the flexible items 
+                            flex-shrink: how much the item will shrink relative to the rest of the flexible items
+                            flex-basis: The length of the item*/
+  margin: 10px;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  grid-gap: 20px;
+}
+
+.grid div:nth-child(n + 4) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.grid > div.ad {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2 / 5;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid div:nth-child(n + 4) {
+    display: block;
+  }
+  .grid div.ad {
+    grid-column: auto;
+    grid-row: auto;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,152 @@
+body,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: Arial;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// MENU
+
+header {
+  background: #000;
+  display: flex;
+  justify-content: space-between; // Space between items
+  align-items: center;
+  padding: 28px;
+  a {
+    float: left;
+    height: auto;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .logo {
+    height: 20px;
+  }
+  .icon {
+    display: none;
+  }
+}
+
+.menu a {
+  padding: 14px;
+}
+
+.menu a:hover {
+  background: rgb(255, 77, 45);
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    align-items: initial;
+  }
+  .nav a:not(:first-child),
+  .menu {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive .icon {
+    position: absolute;
+    right: 28px;
+    top: 29px;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .nav.responsive .menu {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .nav.responsive .menu a {
+    text-align: right;
+  }
+}
+
+// FLEXBOX 1
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  div {
+    flex: 1 1 200px; /* flex-grow: how much the item will grow relative to the rest of the flexible items 
+                            flex-shrink: how much the item will shrink relative to the rest of the flexible items
+                            flex-basis: The length of the item*/
+    margin: 10px;
+  }
+}
+
+// CSS GRID 1
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  grid-gap: 20px; // Space between items
+  div:nth-child(n + 4) {
+    // starts at the fourth item
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+  }
+}
+
+.grid > div.ad {
+  grid-column: 1;
+  grid-row: 2 / 5;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    div:nth-child(n + 4) {
+      display: block;
+    }
+    div.ad {
+      grid-column: auto;
+      grid-row: auto;
+      order: -1;
+    }
+  }
+}
